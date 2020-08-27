@@ -1,0 +1,9 @@
+{
+  "name": "dialog-e2e-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:mateus-f-torres/dialog-e2e-test",
+  "author": "mateus-f-torres <mateusfigtorres@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
