@@ -5,5 +5,13 @@
   "repository": "git@github.com:mateus-f-torres/dialog-e2e-test",
   "author": "mateus-f-torres <mateusfigtorres@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^5.2.1"
+  }
 }
