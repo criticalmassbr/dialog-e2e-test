@@ -10,8 +10,15 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.3.0",
+    "core-js": "^3.6.5",
+    "expect-puppeteer": "^4.4.0",
     "jest": "^26.4.2",
+    "jest-environment-puppeteer": "^4.4.0",
     "jest-puppeteer": "^4.4.0",
-    "puppeteer": "^5.2.1"
+    "puppeteer": "^5.2.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }
