@@ -1,3 +1,5 @@
+import {expectToBeVisible, expectToBeHidden} from "./helpers";
+
 /** Provide longer timeout for Jest async test runs
  *  or Jest will close before Puppeteer can run
  */
@@ -19,9 +21,9 @@ describe('Google Play | PEPapp - PepsiCo', () => {
   }, TIMEOUT)
 
   test('Search for "pepapp"', async () => {
-    const searchForm = await page.waitForSelector(SEARCH_FORM)
-    await expect(searchForm).toFill(SEARCH_FORM_INPUT, 'pepapp', {delay: 100})
-    await searchForm.press('Enter')
+    const form = await page.waitForSelector(SEARCH_FORM)
+    await expect(form).toFill(SEARCH_FORM_INPUT, 'pepapp', {delay: 100})
+    await form.press('Enter')
 
     await page.waitFor(500)
     await expect(page).toMatch('PEPapp - PepsiCo')
@@ -36,17 +38,13 @@ describe('Google Play | PEPapp - PepsiCo', () => {
   }, TIMEOUT)
 
   test('Toggle Read More description', async () => {
-    const visible = await page.waitForSelector(READ_MORE_BUTTON, {visible: true})
-    await expect(visible).toClick('*')
+    await expectToBeVisible(READ_MORE_BUTTON)
+
+    const button = await page.$(READ_MORE_BUTTON)
+    await expect(button).toClick('*')
 
     await page.waitFor(500)
 
-    const hidden = await page.waitForSelector(READ_MORE_BUTTON, {hidden: true})
-    await expect(isVisible(hidden)).rejects.toThrowError(/not visible/)
+    await expectToBeHidden(READ_MORE_BUTTON)
   }, TIMEOUT)
-
 })
-
-async function isVisible(node) {
-  await expect(node).toClick('*')
-}
