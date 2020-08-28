@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest -i"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
